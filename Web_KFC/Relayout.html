@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        header {
+            height: 6em;
+            background-color: blueviolet;
+        }
+        footer {
+            height: 3em;
+            background-color: aquamarine;
+            clear: both;
+        }
+        main {
+            height: 25em;
+            background-color: bisque;
+            width: 75%;
+            float: left;
+        }
+        aside {
+            height: 25em;
+            background-color: brown;
+            width: 25%;
+            float: right;
+        }
+
+        @media screen and (max-width: 800px){
+            main {
+                float: none;
+                width: 100%;
+            }
+        }
+        
+    </style>
+</head>
+<body>
+    <header></header>
+    <main></main>
+    <aside></aside>
+    <footer></footer>
+</body>
+</html>

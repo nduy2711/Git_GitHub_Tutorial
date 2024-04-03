@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+            font-weight: 30;
+            letter-spacing: 1px;
+            box-sizing: border-box;
+            color: #fff;
+        }
+
+        body {
+            overflow: hidden;
+        }
+
+        nav {
+            height: 6em;
+            width: 100vw;
+            background-color: #053742;
+            box-shadow: 0 3px 20px rgba(0, 0, 0, 0.2);
+            position: fixed;
+            z-index: 5;
+            display: flex;
+        }
+
+        .logo {
+            padding: 3vh 3vw;
+            width: 20vw;
+            text-align: left;
+        }
+
+        .logo img {
+            height: auto;
+            width: 4rem;
+        }
+
+        .nav-links {
+            width: 80vw;
+            display: flex;
+            padding: 0rem 0.7rem;
+            justify-content: space-evenly;
+            align-items: center;
+            text-transform: uppercase;
+            list-style: none;
+        }
+
+        .nav-links li a {
+            text-decoration: none;
+        }
+        .nav-links li a:hover{
+            color: black;
+            background-color: white;
+            padding: 10px;
+            border-radius: 50px;
+            transition: all ease-in-out 500ms;
+        }
+        .login-button{
+            padding: 0.6rem 0.8rem;
+            margin-left: 2vw;
+            cursor: pointer;
+            background-color: transparent;
+            border: 1px solid #fff;
+            border-radius: 2em;
+        }
+        .login-button:hover{
+            color: #fff;
+            background-color: #dd5f24;
+            border: 1px solid #dd5f24;
+            transition: all ease-in-out 350ms;
+        }
+        .hamburger div{
+            width: 30px;
+            height: 3px;
+            background-color: #fff;
+            margin: 5px;
+        }
+        .hamburger{
+            display: none;
+        }
+        @media screen and (max-width: 800px) {
+            nav{
+                position: fixed;
+                z-index: 6;
+            }
+            .hamburger{
+                display: block;
+                position: absolute;
+                top: 50%;
+                right: 5%;
+                z-index: 3;
+                transform: translate(-5%, -50%);
+                transition: all 0.7s ease;
+                cursor: pointer;
+            }
+            .nav-links{
+                flex-direction: column;
+                background-color: #053742;
+                height: 100vh;
+                width: 100%;
+                clip-path: circle(50px at 90% -10%);
+                transition: all 1s ease-out;
+                pointer-events: none;
+            }
+            .nav-links.open{
+                clip-path: circle(1000px at 90% -20%);
+                pointer-events: all;
+            }
+            .toggle .bars1{
+                transform: rotate(-45deg) translate(-5px, 6px);
+                transition: all 0.5s ease;
+            }
+            .toggle .bars3{
+                transform: rotate(45deg) translate(-5px, -6px);
+                transition: all 0.5s ease;
+            }
+            .toggle .bars2{
+                transition: all 0s ease;
+                width: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div class="logo">
+            <img src="/images/nike-lich-su-thiet-ke-logo.jpg">
+        </div>
+
+        <div class="hamburger">
+            <div class="bars1"></div>
+            <div class="bars2"></div>
+            <div class="bars3"></div>
+        </div>
+        <ul class="nav-links">
+            <li><a href="">home 1</a></li>
+            <li><a href="">home 2</a></li>
+            <li><a href="">home 3</a></li>
+            <li><a href="">home 4</a></li>
+            <li><a href="">home 5</a></li>
+            <li><button class="login-button">Sign in</button></li>
+        </ul>
+
+    </nav>
+    <script>
+        const ham = document.querySelector(".hamburger");
+        const links = document.querySelector(".nav-links");
+
+        ham.addEventListener('click',()=>{
+            links.classList.toggle("open");
+            ham.classList.toggle("toggle");
+        })
+    </script>
+</body>
+
+</html>
